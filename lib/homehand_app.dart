@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:homehand/core/routing/app_router.dart';
-import 'package:homehand/core/routing/routes.dart';
+import 'package:homehand/core/routes/Routes_App.dart';
+import 'package:homehand/core/routes/app_routes.dart';
 
 class HomeHand extends StatelessWidget {
-  final AppRouter appRouter;
-  const HomeHand({super.key, required this.appRouter});
+  const HomeHand({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -13,8 +14,8 @@ class HomeHand extends StatelessWidget {
       designSize: const Size(428, 926),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.onBoardingScreen,
-        onGenerateRoute: appRouter.generateRoute,
+        initialRoute: RoutesApp.onBoarding,
+        onGenerateRoute: AppRoutes.onGenerateRoute,
       ),
     );
   }

@@ -61,7 +61,7 @@ class TextStyles {
   static TextStyle font14GrayRegular = TextStyle(
     fontSize: 14.sp,
     fontWeight: FontWeightHelper.regular,
-    color: ColorsManager.gray,
+    color: const Color(0xffBDBABA),
   );
 
   static TextStyle font14LightGrayRegular = TextStyle(

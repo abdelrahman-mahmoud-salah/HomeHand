@@ -17,6 +17,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.4.1"
+  animate_do:
+    dependency: "direct main"
+    description:
+      name: animate_do
+      sha256: "7a3162729f0ea042f9dd84da217c5bde5472ad9cef644079929d4304a5dc4ca0"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.3.4"
   animated_text_kit:
     dependency: "direct main"
     description:
@@ -225,6 +233,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.4.3+1"
+  dots_indicator:
+    dependency: "direct main"
+    description:
+      name: dots_indicator
+      sha256: "58b6a365744aa62aa1b70c4ea29e5106fbe064f5edaf7e9652e9b856edbfd9bb"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.0"
   easy_localization:
     dependency: "direct main"
     description:
@@ -589,6 +605,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.2.1"
+  pedantic:
+    dependency: transitive
+    description:
+      name: pedantic
+      sha256: "67fc27ed9639506c856c840ccce7594d0bdcd91bc8d53d6e52359449a1d50602"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.11.1"
   petitparser:
     dependency: transitive
     description:
@@ -778,6 +802,30 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.10.0"
+  speech_to_text:
+    dependency: "direct main"
+    description:
+      name: speech_to_text
+      sha256: "771686424c8b065b814823d63245c593f8a6f066537d658c837bfe51887ac4ce"
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.6.1"
+  speech_to_text_macos:
+    dependency: transitive
+    description:
+      name: speech_to_text_macos
+      sha256: e685750f7542fcaa087a5396ee471e727ec648bf681f4da83c84d086322173f6
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.0"
+  speech_to_text_platform_interface:
+    dependency: transitive
+    description:
+      name: speech_to_text_platform_interface
+      sha256: a0df1a907091ea09880077dc25aae02af9f79811264e6e97ddb08639b7f771c2
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.2.0"
   stack_trace:
     dependency: transitive
     description:
@@ -890,6 +938,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.4"
+  very_good_analysis:
+    dependency: "direct dev"
+    description:
+      name: very_good_analysis
+      sha256: "9ae7f3a3bd5764fb021b335ca28a34f040cd0ab6eec00a1b213b445dae58a4b8"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.1.0"
   vm_service:
     dependency: transitive
     description:

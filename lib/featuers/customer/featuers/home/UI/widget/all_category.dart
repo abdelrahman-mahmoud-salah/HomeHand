@@ -39,7 +39,7 @@ class AllCategory extends StatelessWidget {
         color = Color.fromARGB(255, 176, 220, 251);
         iconColor = Colors.white;
         onTap = () {
-          contex.pushNamed(RoutesApp.WorkersWhoDoService);
+          contex.pushNamed(RoutesApp.workersWhoDoService);
         };
         ;
       case 1:

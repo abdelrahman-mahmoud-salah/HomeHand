@@ -32,6 +32,7 @@ dependencies:
   animated_text_kit: ^4.2.2
   build_runner: ^2.4.9
   cupertino_icons: ^1.0.6
+  curved_navigation_bar: ^1.0.3
   dio: ^5.4.3+1
   dots_indicator: ^3.0.0
   easy_localization: ^3.0.6

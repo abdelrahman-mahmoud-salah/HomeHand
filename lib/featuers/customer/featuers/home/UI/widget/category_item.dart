@@ -8,6 +8,7 @@ class CategoryItem extends StatelessWidget {
       required this.label,
       required this.color,
       this.iconColor,
+      this.onTap,
       this.colorText});
 
   final IconData iconData;
@@ -15,11 +16,12 @@ class CategoryItem extends StatelessWidget {
   final Color? color;
   Color? colorText;
   final Color? iconColor;
+  void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap:onTap ,
       child: Padding(
         padding: EdgeInsets.symmetric(
           vertical: 5.0.h,

@@ -6,4 +6,5 @@ class RoutesApp {
   static const String homeCustomer = '/homeCustomer';
   static const String ordersScreen = '/ordersScreen';
   static const String settingsScreen = '/settingsScreen';
+  static const String WorkersWhoDoService = '/WorkersWhoDoService';
 }

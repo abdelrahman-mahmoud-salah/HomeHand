@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:homehand/core/helper/extinstion.dart';
+import 'package:homehand/core/routes/Routes_App.dart';
 import 'package:homehand/core/theming/colors.dart';
 import 'package:homehand/featuers/customer/featuers/home/UI/widget/category_item.dart';
 
@@ -17,17 +19,18 @@ class AllCategory extends StatelessWidget {
       shrinkWrap: true,
       itemCount: 6,
       itemBuilder: (BuildContext context, int index) {
-        return _buildCategoryItem(index);
+        return _buildCategoryItem(context, index);
       },
     );
   }
 
-  Widget _buildCategoryItem(int index) {
+  Widget _buildCategoryItem(BuildContext contex, int index) {
     IconData iconData;
     String label;
     Color color;
     Color iconColor;
     Color? TextColor;
+    void Function()? onTap;
 
     switch (index) {
       case 0:
@@ -35,6 +38,9 @@ class AllCategory extends StatelessWidget {
         label = 'Cleaning';
         color = Color.fromARGB(255, 176, 220, 251);
         iconColor = Colors.white;
+        onTap = () {
+          contex.pushNamed(RoutesApp.WorkersWhoDoService);
+        };
         ;
       case 1:
         iconData = Icons.construction_rounded;
@@ -75,6 +81,7 @@ class AllCategory extends StatelessWidget {
       color: color,
       iconColor: iconColor,
       colorText: TextColor,
+      onTap: onTap,
     );
   }
 }

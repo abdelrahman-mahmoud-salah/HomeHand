@@ -7,6 +7,7 @@ import 'package:homehand/featuers/Auth/featuers/register/UI/register_view.dart';
 import 'package:homehand/featuers/compineed/on_boarging/on_boarding.dart';
 import 'package:homehand/featuers/customer/featuers/home/UI/homepage_screen.dart';
 import 'package:homehand/featuers/customer/featuers/workerwhodoservice/UI/category_worker_screen.dart';
+import 'package:homehand/featuers/customer/workerProfile_user_screen/UI/workerProfile_user_screen.dart';
 
 class AppRoutes {
   static Route<void> onGenerateRoute(RouteSettings settings) {
@@ -22,8 +23,10 @@ class AppRoutes {
         return BaseRoute(page: const RegisterView());
       case RoutesApp.homeCustomer:
         return BaseRoute(page: const HomeScreen());
-      case RoutesApp.WorkersWhoDoService:
+      case RoutesApp.workersWhoDoService:
         return BaseRoute(page: const WorkersWhoDoService());
+      case RoutesApp.workerProfileUserScreen:
+        return BaseRoute(page: const WorkerProfileUserScreen());
 
       default:
         return BaseRoute(page: const PageUnderBuildScreen());

@@ -2,6 +2,7 @@ import 'dart:ffi';
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:homehand/core/helper/spacing.dart';
@@ -17,20 +18,21 @@ class WorkersWhoDoServiceBoody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.all(8.0.w),
-      child: CustomScrollView(
-        scrollBehavior: ScrollBehavior(),
-        physics: ClampingScrollPhysics(),
-        slivers: [
-          SliverToBoxAdapter(
-              child: Column(
-            children: [
-              AppBarWorkerInfo(),
-              verticalSpace(8),
-              SearchingAndFilter(),
-              verticalSpace(8),
-            ],
-          )),
-          AllWorkerDoService(),
+      child: Column(
+        children: [
+          AppBarWorkerInfo(),
+          verticalSpace(8),
+          SearchingAndFilter(),
+          verticalSpace(8),
+          Expanded(
+            child: CustomScrollView(
+              scrollBehavior: ScrollBehavior(),
+              physics: ClampingScrollPhysics(),
+              slivers: [
+                AllWorkerDoService(),
+              ],
+            ),
+          ),
         ],
       ),
     );

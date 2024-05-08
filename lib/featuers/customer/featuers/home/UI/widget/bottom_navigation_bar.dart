@@ -14,13 +14,18 @@ class CurveBar extends StatefulWidget {
 }
 
 class _CurveBarState extends State<CurveBar> {
-  int index = 0;
- 
+  int index = 1;
 
   @override
   Widget build(BuildContext context) {
     final items = [
       // ignore: lines_longer_than_80_chars
+      IconButton(
+        icon: const Icon(Icons.settings, size: 30),
+        onPressed: () {
+          context.pushNamed(RoutesApp.settingsScreen);
+        },
+      ),
       IconButton(
         icon: const Icon(Icons.home_outlined, size: 30),
         onPressed: () {},

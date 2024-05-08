@@ -10,6 +10,7 @@ import 'package:homehand/featuers/customer/featuers/order_details/UI/order_detai
 import 'package:homehand/featuers/customer/featuers/orders_screen/UI/orders_screen.dart';
 import 'package:homehand/featuers/customer/featuers/review_screen/UI/review_screen.dart';
 import 'package:homehand/featuers/customer/featuers/service_details/UI/service_details.dart';
+import 'package:homehand/featuers/customer/featuers/settings_screen/UI/settings_screen.dart';
 import 'package:homehand/featuers/customer/featuers/workerwhodoservice/UI/category_worker_screen.dart';
 import 'package:homehand/featuers/customer/featuers/workerProfile_user_screen/UI/workerProfile_user_screen.dart';
 
@@ -39,6 +40,8 @@ class AppRoutes {
         return BaseRoute(page: const OrderDetails());
       case RoutesApp.allOrderSubmited:
         return BaseRoute(page: const OrdersScreen());
+      case RoutesApp.settingsScreen:
+        return BaseRoute(page: const SettingsScreen());
 
       default:
         return BaseRoute(page: const PageUnderBuildScreen());

@@ -11,4 +11,6 @@ class RoutesApp {
   static const String serviceDetails = '/ServiceDetails';
   static const String reviewScreen = '/ReviewScreen';
   static const String orderDetails = '/OrderDetails';
+  static const String allOrderSubmited = '/allOrderSubmited';
 }
+

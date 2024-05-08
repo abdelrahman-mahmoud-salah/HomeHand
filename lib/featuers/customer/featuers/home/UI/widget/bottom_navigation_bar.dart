@@ -4,6 +4,7 @@ import 'package:homehand/core/helper/extinstion.dart';
 import 'package:homehand/core/routes/Routes_App.dart';
 import 'package:homehand/core/theming/colors.dart';
 import 'package:homehand/featuers/customer/featuers/home/UI/homepage_screen.dart';
+import 'package:homehand/featuers/customer/featuers/orders_screen/UI/orders_screen.dart';
 
 class CurveBar extends StatefulWidget {
   const CurveBar({super.key});
@@ -14,9 +15,7 @@ class CurveBar extends StatefulWidget {
 
 class _CurveBarState extends State<CurveBar> {
   int index = 0;
-  final screen = const [
-    HomeScreen(),
-  ];
+ 
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +23,12 @@ class _CurveBarState extends State<CurveBar> {
       // ignore: lines_longer_than_80_chars
       IconButton(
         icon: const Icon(Icons.home_outlined, size: 30),
+        onPressed: () {},
+      ),
+      IconButton(
+        icon: const Icon(Icons.shopping_cart, size: 30),
         onPressed: () {
-          context.pushNamed(RoutesApp.homeCustomer);
+          context.pushNamed(RoutesApp.allOrderSubmited);
         },
       ),
     ];

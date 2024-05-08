@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:homehand/core/helper/extinstion.dart';
+import 'package:homehand/core/routes/Routes_App.dart';
 import 'package:homehand/core/theming/colors.dart';
-
 
 import 'view/review_body.dart';
 
@@ -40,7 +40,9 @@ class _ReviewScreenState extends State<ReviewScreen> {
         padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 40.h),
         // Adjusted vertical padding
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            context.pushNamed(RoutesApp.homeCustomer);
+          },
           style: ElevatedButton.styleFrom(
             fixedSize: Size(340.w, 75.h),
             foregroundColor: Colors.white,

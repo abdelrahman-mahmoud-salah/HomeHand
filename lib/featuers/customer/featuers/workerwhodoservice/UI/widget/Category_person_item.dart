@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:homehand/core/helper/spacing.dart';
+import 'package:homehand/core/theming/colors.dart';
 import 'package:homehand/featuers/customer/featuers/workerwhodoservice/data/model/Info_about_who_work_service_model.dart';
 
 class ItemContent extends StatelessWidget {
@@ -14,8 +15,8 @@ class ItemContent extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        height: 150.h,
-        width: 120.w,
+        height: 110.h,
+        width: 110.w,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: Colors.grey[300], // Changed to Colors.grey[300]
@@ -31,18 +32,21 @@ class ItemContent extends StatelessWidget {
         child: Stack(
           children: [
             Positioned(
-              top: 7,
-              left: 3,
-              right: 3,
-              child: Container(
-                height: 135.h,
-                width: 110.w,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    // fit: BoxFit.cover, // Changed to BoxFit.cover
-                    image: NetworkImage(infoService.imageUrl),
+              top: 8,
+              left: 5,
+              right: 5,
+              child: PreferredSize(
+                preferredSize: Size(110.w, 170.h),
+                child: Container(
+                  height: 190.h,
+                  width: 100.w,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      fit: BoxFit.cover, // Changed to BoxFit.cover
+                      image: NetworkImage(infoService.imageUrl),
+                    ),
+                    borderRadius: BorderRadius.circular(10),
                   ),
-                  borderRadius: BorderRadius.circular(10),
                 ),
               ),
             ),

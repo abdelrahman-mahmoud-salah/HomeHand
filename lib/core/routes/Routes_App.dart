@@ -8,4 +8,5 @@ class RoutesApp {
   static const String settingsScreen = '/settingsScreen';
   static const String workersWhoDoService = '/WorkersWhoDoService';
   static const String workerProfileUserScreen = '/WorkerProfileUserScreen';
+  static const String serviceDetails = '/ServiceDetails';
 }

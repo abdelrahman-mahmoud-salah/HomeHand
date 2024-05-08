@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:homehand/core/helper/spacing.dart';
 import 'package:homehand/core/theming/colors.dart';
-import 'package:homehand/featuers/customer/workerProfile_user_screen/UI/widgets/profile_image.dart';
+import 'package:homehand/featuers/customer/featuers/workerProfile_user_screen/UI/widgets/profile_image.dart';
 
 class IdWorkerInfo extends StatelessWidget {
   const IdWorkerInfo({

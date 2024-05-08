@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:homehand/featuers/customer/workerProfile_user_screen/UI/view/WPU_body.dart';
-import 'package:homehand/featuers/customer/workerProfile_user_screen/UI/widgets/appbar_worker_profile_to_user.dart';
+import 'package:homehand/featuers/customer/featuers/workerProfile_user_screen/UI/view/WPU_body.dart';
+import 'package:homehand/featuers/customer/featuers/workerProfile_user_screen/UI/widgets/appbar_worker_profile_to_user.dart';
 
 class WorkerProfileUserScreen extends StatelessWidget {
   const WorkerProfileUserScreen({super.key});

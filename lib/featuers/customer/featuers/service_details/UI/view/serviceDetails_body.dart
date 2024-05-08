@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:homehand/core/helper/extinstion.dart';
 import 'package:homehand/core/helper/spacing.dart';
+import 'package:homehand/core/routes/Routes_App.dart';
 import 'package:homehand/core/theming/colors.dart';
 
 import '../widgets/details_item.dart';
@@ -132,7 +134,9 @@ class _ServiceDetailsBodyState extends State<ServiceDetailsBody> {
             verticalSpace(30),
             Center(
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.pushNamed(RoutesApp.reviewScreen);
+                },
                 style: ElevatedButton.styleFrom(
                   fixedSize: Size(340.w, 75.h),
                   foregroundColor: Colors.white,

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:homehand/core/helper/spacing.dart';
-import 'package:homehand/featuers/customer/workerProfile_user_screen/UI/widgets/book_button.dart';
-import 'package:homehand/featuers/customer/workerProfile_user_screen/UI/widgets/description_for_worker.dart';
-import 'package:homehand/featuers/customer/workerProfile_user_screen/UI/widgets/id_woker_info.dart';
-import 'package:homehand/featuers/customer/workerProfile_user_screen/UI/widgets/state_item.dart';
+import 'package:homehand/featuers/customer/featuers/workerProfile_user_screen/UI/widgets/book_button.dart';
+import 'package:homehand/featuers/customer/featuers/workerProfile_user_screen/UI/widgets/description_for_worker.dart';
+import 'package:homehand/featuers/customer/featuers/workerProfile_user_screen/UI/widgets/id_woker_info.dart';
+import 'package:homehand/featuers/customer/featuers/workerProfile_user_screen/UI/widgets/state_item.dart';
 
 class WPUBody extends StatelessWidget {
   

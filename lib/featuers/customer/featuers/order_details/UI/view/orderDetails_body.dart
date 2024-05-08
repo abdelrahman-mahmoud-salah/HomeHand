@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:homehand/core/helper/spacing.dart';
+import 'package:homehand/featuers/customer/featuers/order_details/UI/widgets/Submit_button.dart';
 import 'package:homehand/featuers/customer/featuers/order_details/UI/widgets/custom_stepper.dart';
-import 'package:homehand/featuers/customer/featuers/order_details/UI/widgets/worker_buttons.dart';
-
 
 class OrderDetailsBody extends StatefulWidget {
   const OrderDetailsBody({super.key});
@@ -15,14 +14,13 @@ class OrderDetailsBody extends StatefulWidget {
 class _OrderDetailsBodyState extends State<OrderDetailsBody> {
   bool isWorker = false;
 
-
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20.0).w,
       child: ListView(
         children: <Widget>[
-           Padding(
+          Padding(
             padding: const EdgeInsets.all(20.0).w,
             child: Center(
               child: Text(
@@ -47,7 +45,8 @@ class _OrderDetailsBodyState extends State<OrderDetailsBody> {
                 ),
                 Text(
                   'Order Details',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.sp),
+                  style:
+                      TextStyle(fontWeight: FontWeight.bold, fontSize: 16.sp),
                 ),
               ],
             ),
@@ -88,7 +87,7 @@ class _OrderDetailsBodyState extends State<OrderDetailsBody> {
               ],
             ),
           ),
-           Padding(
+          Padding(
             padding: EdgeInsets.only(left: 15.0.w),
             child: Row(
               children: [
@@ -102,17 +101,18 @@ class _OrderDetailsBodyState extends State<OrderDetailsBody> {
                 ),
                 Text(
                   '08:30 Am, 22may, 2023',
-                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 16.sp),
+                  style:
+                      TextStyle(fontWeight: FontWeight.w400, fontSize: 16.sp),
                 ),
               ],
             ),
           ),
           if (!isWorker)
-             Padding(
+            Padding(
               padding: EdgeInsets.symmetric(horizontal: 80.w, vertical: 20.h),
               child: const CustomStepper(currentIndex: 0),
             ),
-           ListTile(
+          ListTile(
             title: Row(
               children: [
                 Padding(
@@ -125,7 +125,8 @@ class _OrderDetailsBodyState extends State<OrderDetailsBody> {
                 ),
                 Text(
                   'Price Details',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.sp),
+                  style:
+                      TextStyle(fontWeight: FontWeight.bold, fontSize: 16.sp),
                 ),
               ],
             ),
@@ -155,7 +156,7 @@ class _OrderDetailsBodyState extends State<OrderDetailsBody> {
               ),
             ),
           ),
-           ListTile(
+          ListTile(
             title: Row(
               children: [
                 Padding(
@@ -168,7 +169,8 @@ class _OrderDetailsBodyState extends State<OrderDetailsBody> {
                 ),
                 Text(
                   'Task Notes',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.sp),
+                  style:
+                      TextStyle(fontWeight: FontWeight.bold, fontSize: 16.sp),
                 ),
               ],
             ),
@@ -179,8 +181,7 @@ class _OrderDetailsBodyState extends State<OrderDetailsBody> {
             ),
           ),
           verticalSpace(20),
-          if (isWorker)
-            const WorkerButtons(),
+          ButtonSumbit(),
         ],
       ),
     );

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:homehand/core/di/dependace_injection.dart';
 import 'package:homehand/core/routes/Routes_App.dart';
 import 'package:homehand/core/routes/base_routes.dart';
 import 'package:homehand/core/widget/under_build_screen.dart';
 import 'package:homehand/featuers/Auth/featuers/login/UI/login_view.dart';
+import 'package:homehand/featuers/Auth/featuers/login/logic/cubit/login_cubit.dart';
 import 'package:homehand/featuers/Auth/featuers/register/UI/register_view.dart';
 import 'package:homehand/featuers/compineed/on_boarging/on_boarding.dart';
 import 'package:homehand/featuers/customer/featuers/home/UI/homepage_screen.dart';
@@ -13,6 +16,7 @@ import 'package:homehand/featuers/customer/featuers/service_details/UI/service_d
 import 'package:homehand/featuers/customer/featuers/settings_screen/UI/settings_screen.dart';
 import 'package:homehand/featuers/customer/featuers/workerwhodoservice/UI/category_worker_screen.dart';
 import 'package:homehand/featuers/customer/featuers/workerProfile_user_screen/UI/workerProfile_user_screen.dart';
+import 'package:homehand/featuers/woeker/workerscreen.dart';
 
 class AppRoutes {
   static Route<void> onGenerateRoute(RouteSettings settings) {
@@ -23,7 +27,11 @@ class AppRoutes {
           page: OnBoarding(),
         );
       case RoutesApp.login:
-        return BaseRoute(page: const LoginView());
+        return BaseRoute(
+            page: BlocProvider(
+          create: (context) => getIt<LoginCubit>(),
+          child: const LoginView(),
+        ));
       case RoutesApp.signUp:
         return BaseRoute(page: const RegisterView());
       case RoutesApp.homeCustomer:
@@ -42,6 +50,8 @@ class AppRoutes {
         return BaseRoute(page: const OrdersScreen());
       case RoutesApp.settingsScreen:
         return BaseRoute(page: const SettingsScreen());
+      case RoutesApp.homeWorker:
+        return BaseRoute(page: const WorkerScreen());
 
       default:
         return BaseRoute(page: const PageUnderBuildScreen());

@@ -6,4 +6,9 @@ class RoutesApp {
   static const String homeCustomer = '/homeCustomer';
   static const String ordersScreen = '/ordersScreen';
   static const String settingsScreen = '/settingsScreen';
+  static const String workersWhoDoService = '/WorkersWhoDoService';
+  static const String workerProfileUserScreen = '/WorkerProfileUserScreen';
+  static const String serviceDetails = '/ServiceDetails';
+  static const String reviewScreen = '/ReviewScreen';
+  static const String orderDetails = '/OrderDetails';
 }

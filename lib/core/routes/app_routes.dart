@@ -6,6 +6,7 @@ import 'package:homehand/featuers/Auth/featuers/login/UI/login_view.dart';
 import 'package:homehand/featuers/Auth/featuers/register/UI/register_view.dart';
 import 'package:homehand/featuers/compineed/on_boarging/on_boarding.dart';
 import 'package:homehand/featuers/customer/featuers/home/UI/homepage_screen.dart';
+import 'package:homehand/featuers/customer/featuers/order_details/UI/order_details.dart';
 import 'package:homehand/featuers/customer/featuers/review_screen/UI/review_screen.dart';
 import 'package:homehand/featuers/customer/featuers/service_details/UI/service_details.dart';
 import 'package:homehand/featuers/customer/featuers/workerwhodoservice/UI/category_worker_screen.dart';
@@ -33,6 +34,8 @@ class AppRoutes {
         return BaseRoute(page: const ServiceDetails());
       case RoutesApp.reviewScreen:
         return BaseRoute(page: const ReviewScreen());
+      case RoutesApp.orderDetails:
+        return BaseRoute(page: const OrderDetails());
 
       default:
         return BaseRoute(page: const PageUnderBuildScreen());

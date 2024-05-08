@@ -135,7 +135,7 @@ class _ServiceDetailsBodyState extends State<ServiceDetailsBody> {
             Center(
               child: ElevatedButton(
                 onPressed: () {
-                  context.pushNamed(RoutesApp.reviewScreen);
+                  context.pushNamed(RoutesApp.orderDetails);
                 },
                 style: ElevatedButton.styleFrom(
                   fixedSize: Size(340.w, 75.h),

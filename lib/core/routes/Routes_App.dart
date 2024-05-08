@@ -10,4 +10,5 @@ class RoutesApp {
   static const String workerProfileUserScreen = '/WorkerProfileUserScreen';
   static const String serviceDetails = '/ServiceDetails';
   static const String reviewScreen = '/ReviewScreen';
+  static const String orderDetails = '/OrderDetails';
 }

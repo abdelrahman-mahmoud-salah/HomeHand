@@ -9,4 +9,5 @@ class RoutesApp {
   static const String workersWhoDoService = '/WorkersWhoDoService';
   static const String workerProfileUserScreen = '/WorkerProfileUserScreen';
   static const String serviceDetails = '/ServiceDetails';
+  static const String reviewScreen = '/ReviewScreen';
 }

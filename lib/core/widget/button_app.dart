@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:homehand/core/helper/spacing.dart';
-import 'package:homehand/core/theming/styels.dart';
+import '../helper/spacing.dart';
+import '../theming/styels.dart';
 
 class ButtonApp extends StatelessWidget {
   ButtonApp(
@@ -31,14 +31,17 @@ class ButtonApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
+
         style: ButtonStyle(
+          
             padding:
                 MaterialStatePropertyAll(EdgeInsets.symmetric(horizontal: 16)),
             fixedSize: MaterialStatePropertyAll(Size(double.infinity, height)),
             shape: MaterialStatePropertyAll(RoundedRectangleBorder(
                 side: side ?? BorderSide.none,
                 borderRadius: BorderRadius.circular(23))),
-            backgroundColor: backgroundColor),
+            backgroundColor: backgroundColor
+            ),
         onPressed: onPressed,
         child: Row(
           mainAxisAlignment: icon!.isEmpty

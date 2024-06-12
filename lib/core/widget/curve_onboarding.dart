@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:homehand/core/widget/dimension_curve.dart';
+import 'dimension_curve.dart';
 
 class CurveOnBoarding extends StatefulWidget {
   CurveOnBoarding({super.key});

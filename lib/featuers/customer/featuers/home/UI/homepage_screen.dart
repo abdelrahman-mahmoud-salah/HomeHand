@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:homehand/featuers/customer/featuers/home/UI/views/homepage_boody.dart';
-import 'package:homehand/featuers/customer/featuers/home/UI/widget/bottom_navigation_bar.dart';
+import 'views/homepage_boody.dart';
+import 'widget/bottom_navigation_bar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

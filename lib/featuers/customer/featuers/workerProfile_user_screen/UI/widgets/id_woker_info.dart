@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:homehand/core/helper/spacing.dart';
-import 'package:homehand/core/theming/colors.dart';
-import 'package:homehand/featuers/customer/featuers/workerProfile_user_screen/UI/widgets/profile_image.dart';
+import '../../../../../../core/helper/spacing.dart';
+import '../../../../../../core/theming/colors.dart';
+import 'profile_image.dart';
 
 class IdWorkerInfo extends StatelessWidget {
   const IdWorkerInfo({
-    super.key,
+    super.key, required this.image, required this.experience,
     
   });
 
 final String coin = "LE";
+final String image;
+final String experience;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const ProfileImage(),
+         ProfileImage(image: image,),
         verticalSpace(20),
         Text(
           'Mitchal Marsh',
@@ -26,7 +28,7 @@ final String coin = "LE";
               fontSize: 20.sp),
         ),
         Text(
-          '5 years experience',
+          '${experience} years experience',
           style: TextStyle(
               color: ColorsManager.mainBlue,
               fontSize: 15.sp,

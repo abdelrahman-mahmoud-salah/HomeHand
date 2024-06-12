@@ -1,15 +1,15 @@
-import 'dart:ffi';
-
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:homehand/core/helper/spacing.dart';
-import 'package:homehand/core/theming/colors.dart';
-import 'package:homehand/featuers/customer/featuers/workerwhodoservice/UI/widget/app_bar_worker_info.dart';
-import 'package:homehand/featuers/customer/featuers/workerwhodoservice/UI/widget/form_searchingandfilter_for%20_worker.dart';
-import 'package:homehand/featuers/customer/featuers/workerwhodoservice/UI/widget/listview_for_worker.dart';
+import '../../../../../../core/helper/spacing.dart';
+import '../../../../../../core/widget/empty_screen.dart';
+import '../../bloc/cubit/getallworker_cubit.dart';
+import '../../bloc/cubit/getallworker_state.dart';
+import '../widget/app_bar_worker_info.dart';
+import '../widget/form_searchingandfilter_for%20_worker.dart';
+import '../widget/listview_for_worker.dart';
 
 class WorkersWhoDoServiceBoody extends StatelessWidget {
   const WorkersWhoDoServiceBoody({super.key});
@@ -29,7 +29,38 @@ class WorkersWhoDoServiceBoody extends StatelessWidget {
               scrollBehavior: ScrollBehavior(),
               physics: ClampingScrollPhysics(),
               slivers: [
-                AllWorkerDoService(),
+                SliverToBoxAdapter(
+                  child: BlocBuilder<GetallworkerCubit, Getallworker>(
+                    builder: (context, state) {
+                      return state.when(
+                        loading: () {
+                          return const WorkerShimmer();
+                        },
+                        success: (productList) {
+                          if (productList.workerList.isEmpty) {
+                            return EmptyScreen(
+                              title: 'no found data',
+                            );
+                          } else {
+                            return AllWorkerView(
+                              data: productList.workerList,
+                            );
+                          }
+                        },
+                        empty: () {
+                          return EmptyScreen(
+                            title: 'no found data',
+                          );
+                        },
+                        error: (error) {
+                          return Center(
+                            child: Text(error),
+                          );
+                        },
+                      );
+                    },
+                  ),
+                ),
               ],
             ),
           ),

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:homehand/core/animation/animation_todo.dart';
-import 'package:homehand/core/theming/colors.dart';
-import 'package:homehand/core/theming/styels.dart';
-import 'package:homehand/core/widget/curve_onboarding.dart';
+import '../../../../../../core/animation/animation_todo.dart';
+import '../../../../../../core/theming/colors.dart';
+import '../../../../../../core/theming/styels.dart';
+import '../../../../../../core/widget/curve_onboarding.dart';
 
 class CurveAppBar extends StatelessWidget {
   const CurveAppBar({super.key});

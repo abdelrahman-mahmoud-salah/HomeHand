@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:homehand/core/theming/colors.dart';
-import 'package:homehand/core/theming/styels.dart';
+import '../theming/colors.dart';
+import '../theming/styels.dart';
 
 class AppTextFormField extends StatelessWidget {
-  const AppTextFormField({
+   AppTextFormField({
     super.key,
     this.contentPadding,
     this.focusedBorder,
@@ -20,6 +20,7 @@ class AppTextFormField extends StatelessWidget {
     required this.validator,
     this.prefix,
     this.cursorColor,
+    this.keyboardType
   });
   final EdgeInsetsGeometry? contentPadding;
   final InputBorder? focusedBorder;
@@ -34,10 +35,12 @@ class AppTextFormField extends StatelessWidget {
   final Widget? prefix;
   final String? Function(String?)? validator;
   final Color? cursorColor;
+  TextInputType? keyboardType;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      keyboardType:keyboardType,
       cursorColor: cursorColor,
       cursorErrorColor: Colors.red,
       controller: controller,

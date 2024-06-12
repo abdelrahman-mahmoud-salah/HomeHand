@@ -1,10 +1,10 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:homehand/core/helper/extinstion.dart';
-import 'package:homehand/core/routes/Routes_App.dart';
-import 'package:homehand/core/theming/colors.dart';
-import 'package:homehand/featuers/customer/featuers/home/UI/homepage_screen.dart';
-import 'package:homehand/featuers/customer/featuers/orders_screen/UI/orders_screen.dart';
+import '../../../../../../core/helper/extinstion.dart';
+import '../../../../../../core/routes/Routes_App.dart';
+import '../../../../../../core/theming/colors.dart';
+import '../homepage_screen.dart';
+import '../../../orders_screen/UI/orders_screen.dart';
 
 class CurveBar extends StatefulWidget {
   const CurveBar({super.key});

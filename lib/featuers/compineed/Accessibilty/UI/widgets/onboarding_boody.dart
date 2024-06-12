@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:homehand/core/theming/styels.dart';
+import '../../../../../core/theming/styels.dart';
 
 import 'package:speech_to_text/speech_recognition_result.dart';
 import 'package:speech_to_text/speech_to_text.dart';

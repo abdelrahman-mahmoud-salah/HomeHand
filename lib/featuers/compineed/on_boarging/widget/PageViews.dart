@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:homehand/featuers/compineed/on_boarging/widget/Custom_PageVIewItem.dart';
+import 'Custom_PageVIewItem.dart';
 
 class PageViewsApp extends StatelessWidget {
   PageViewsApp({

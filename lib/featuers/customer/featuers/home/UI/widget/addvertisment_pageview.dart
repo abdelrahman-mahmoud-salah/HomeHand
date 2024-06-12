@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:homehand/featuers/customer/featuers/home/UI/widget/offer_component.dart';
+import 'offer_component.dart';
 
 
 

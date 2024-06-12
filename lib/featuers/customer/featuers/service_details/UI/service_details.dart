@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:homehand/core/helper/extinstion.dart';
 
+import '../../../../../core/helper/extinstion.dart';
 import 'view/serviceDetails_body.dart';
 
 class ServiceDetails extends StatefulWidget {

@@ -1,8 +1,8 @@
-import 'package:homehand/core/networking/api_error_handeler.dart';
-import 'package:homehand/core/networking/api_result.dart';
-import 'package:homehand/core/networking/api_services.dart';
-import 'package:homehand/featuers/Auth/featuers/login/data/model/login_repo_boody.dart';
-import 'package:homehand/featuers/Auth/featuers/login/data/model/login_request_boody.dart';
+import '../../../../../../core/networking/api_error_handeler.dart';
+import '../../../../../../core/networking/api_result.dart';
+import '../../../../../../core/networking/api_services.dart';
+import '../model/login_repo_boody.dart';
+import '../model/login_request_boody.dart';
 
 class LoginRepo {
   final ApiService _apiService;

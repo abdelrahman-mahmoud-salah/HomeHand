@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:homehand/core/helper/extinstion.dart';
-import 'package:homehand/core/routes/Routes_App.dart';
+import '../../../../../../core/helper/extinstion.dart';
+import '../../../../../../core/routes/Routes_App.dart';
 
 class BookBuutton extends StatelessWidget {
   const BookBuutton({

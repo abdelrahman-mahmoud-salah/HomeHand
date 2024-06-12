@@ -1,6 +1,6 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
-import 'package:homehand/core/theming/colors.dart';
+import '../../../../core/theming/colors.dart';
 
 // ignore: must_be_immutable
 class CustomDotsIndicator extends StatelessWidget {

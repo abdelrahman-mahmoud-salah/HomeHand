@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:homehand/core/helper/spacing.dart';
-import 'package:homehand/featuers/customer/featuers/order_details/UI/widgets/Submit_button.dart';
-import 'package:homehand/featuers/customer/featuers/order_details/UI/widgets/custom_stepper.dart';
+import '../../../../../../core/helper/spacing.dart';
+import '../widgets/Submit_button.dart';
+import '../widgets/custom_stepper.dart';
 
 class OrderDetailsBody extends StatefulWidget {
   const OrderDetailsBody({super.key});

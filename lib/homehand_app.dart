@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:homehand/core/routes/Routes_App.dart';
-import 'package:homehand/core/routes/app_routes.dart';
+import 'core/routes/Routes_App.dart';
+import 'core/routes/app_routes.dart';
 
 class HomeHand extends StatelessWidget {
   const HomeHand({

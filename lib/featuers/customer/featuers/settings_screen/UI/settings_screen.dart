@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:homehand/core/helper/extinstion.dart';
-import 'package:homehand/core/theming/colors.dart';
-import 'package:homehand/featuers/customer/featuers/settings_screen/UI/view/settings_body.dart';
+import '../../../../../core/helper/extinstion.dart';
+import '../../../../../core/theming/colors.dart';
+import 'view/settings_body.dart';
 
 
 class SettingsScreen extends StatelessWidget {

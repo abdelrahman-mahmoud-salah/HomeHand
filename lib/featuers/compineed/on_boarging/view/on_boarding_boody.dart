@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:homehand/core/helper/extinstion.dart';
-import 'package:homehand/core/helper/spacing.dart';
-import 'package:homehand/core/routes/Routes_App.dart';
+import '../../../../core/helper/extinstion.dart';
+import '../../../../core/helper/spacing.dart';
+import '../../../../core/routes/Routes_App.dart';
 
-import 'package:homehand/featuers/compineed/on_boarging/widget/Custom_Indicator.dart';
-import 'package:homehand/featuers/compineed/on_boarging/widget/PageViews.dart';
-import 'package:homehand/featuers/compineed/on_boarging/widget/onboarding_button.dart';
+import '../widget/Custom_Indicator.dart';
+import '../widget/PageViews.dart';
+import '../widget/onboarding_button.dart';
 
 class OnBoardingBoody extends StatefulWidget {
   const OnBoardingBoody({super.key});

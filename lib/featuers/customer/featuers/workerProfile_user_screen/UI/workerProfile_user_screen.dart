@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:homehand/featuers/customer/featuers/workerProfile_user_screen/UI/view/WPU_body.dart';
-import 'package:homehand/featuers/customer/featuers/workerProfile_user_screen/UI/widgets/appbar_worker_profile_to_user.dart';
+import 'view/WPU_body.dart';
+import 'widgets/appbar_worker_profile_to_user.dart';
+import '../../workerwhodoservice/bloc/cubit/getallworker_state.dart';
+import '../../workerwhodoservice/data/model/Info_about_who_work_service_model.dart';
 
 class WorkerProfileUserScreen extends StatelessWidget {
-  const WorkerProfileUserScreen({super.key});
-
+  const WorkerProfileUserScreen({super.key, required this.data});
+final GetAllWorkerinfoModel data;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:AppBarWorkerProfileForUser(context) ,
+      appBar: AppBarWorkerProfileForUser(context),
       backgroundColor: const Color(0xffD9D9D9),
-      body: const WPUBody(),
+      body: WPUBody(
+        data: data,
+      ),
     );
   }
 }
-
-

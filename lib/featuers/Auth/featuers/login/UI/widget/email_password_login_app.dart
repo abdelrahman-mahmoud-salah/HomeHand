@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:homehand/core/animation/animation_todo.dart';
-import 'package:homehand/core/helper/regex.dart';
-import 'package:homehand/core/helper/spacing.dart';
-import 'package:homehand/core/theming/colors.dart';
-import 'package:homehand/core/theming/styels.dart';
-import 'package:homehand/core/widget/app_text_form_field.dart';
-import 'package:homehand/featuers/Auth/featuers/login/logic/cubit/login_cubit.dart';
+import '../../../../../../core/animation/animation_todo.dart';
+import '../../../../../../core/helper/regex.dart';
+import '../../../../../../core/helper/spacing.dart';
+import '../../../../../../core/theming/colors.dart';
+import '../../../../../../core/theming/styels.dart';
+import '../../../../../../core/widget/app_text_form_field.dart';
+import '../../logic/cubit/login_cubit.dart';
 
 class EmailandPasswordLogin extends StatefulWidget {
   const EmailandPasswordLogin({super.key});

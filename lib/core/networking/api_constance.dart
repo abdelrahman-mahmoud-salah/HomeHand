@@ -1,7 +1,11 @@
 class ApiConstants {
-  static const String apiBaseUrl = 'https://projectbackend-1-74b9.onrender.com/api/';
+  static const String apiBaseUrl =
+      'https://projectbackend-1-74b9.onrender.com/api/';
   static const String login = 'login';
   static const String signup = 'register';
+  static const String signupWorker = 'worker/registerWorker';
+  static const String getallworker = 'worker/getAllWorkers';
+  static const String getallordertoworker = 'order/getAllOrders';
 }
 
 class ApiErrors {

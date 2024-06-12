@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:homehand/core/helper/extinstion.dart';
-import 'package:homehand/core/theming/colors.dart';
-import 'package:homehand/featuers/customer/featuers/orders_screen/UI/view/orders_body.dart';
+import '../../../../../core/helper/extinstion.dart';
+import '../../../../../core/theming/colors.dart';
+import 'view/orders_body.dart';
 
 
 class OrdersScreen extends StatefulWidget {

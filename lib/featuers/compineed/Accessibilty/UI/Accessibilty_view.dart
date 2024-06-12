@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:homehand/core/theming/styels.dart';
-import 'package:homehand/featuers/compineed/Accessibilty/UI/widgets/onboarding_boody.dart';
+import '../../../../core/theming/styels.dart';
+import 'widgets/onboarding_boody.dart';
 
 class AccessibiltyView extends StatelessWidget {
   const AccessibiltyView({super.key});

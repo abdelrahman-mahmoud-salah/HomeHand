@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:homehand/core/helper/spacing.dart';
-import 'package:homehand/featuers/customer/featuers/home/UI/widget/addvertisment_pageview.dart';
-import 'package:homehand/featuers/customer/featuers/home/UI/widget/custom_dots_indicator_addvertisment.dart';
+import '../../../../../../core/helper/spacing.dart';
+import 'addvertisment_pageview.dart';
+import 'custom_dots_indicator_addvertisment.dart';
 
 class AdvertismentHomePage extends StatefulWidget {
   const AdvertismentHomePage({super.key});

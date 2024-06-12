@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:homehand/core/networking/api_error_handeler.dart';
+import 'api_error_handeler.dart';
 
 part 'api_result.freezed.dart';
 

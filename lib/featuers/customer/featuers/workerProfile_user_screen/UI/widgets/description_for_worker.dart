@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:homehand/core/helper/spacing.dart';
+import '../../../../../../core/helper/spacing.dart';
 
 class DescriptonForWorker extends StatelessWidget {
-   DescriptonForWorker({
-    super.key,
-  
+  DescriptonForWorker({
+    super.key, required this.description,
   });
 
-     String description =
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. "
-      "Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. ";
+  final String description;
 
   @override
   Widget build(BuildContext context) {
@@ -36,4 +33,3 @@ class DescriptonForWorker extends StatelessWidget {
     );
   }
 }
-

@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:homehand/featuers/Auth/featuers/login/data/model/login_request_boody.dart';
-import 'package:homehand/featuers/Auth/featuers/login/data/repos/login_repo.dart';
-import 'package:homehand/featuers/Auth/featuers/login/logic/cubit/login_state.dart';
+import '../../../../../../core/helper/shared_perefernce.dart';
+import '../../data/model/login_request_boody.dart';
+import '../../data/repos/login_repo.dart';
+import 'login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {
   final LoginRepo _loginRepo;
   LoginCubit(this._loginRepo) : super(const LoginState.initial());
-
+  String? token = '';
+  String Id = '';
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   final formKey = GlobalKey<FormState>();
@@ -20,8 +22,12 @@ class LoginCubit extends Cubit<LoginState> {
         password: passwordController.text,
       ),
     );
-    response.when(success: (loginResponse) {
-      emit(LoginState.success(loginResponse.userType));
+    await response.when(success: (loginResponse) async {
+      token = loginResponse.token;
+      Id = '${loginResponse.id}';
+      await CacheHelper().setInstance(data: token, key: 'token');
+      await CacheHelper().setInstance(data: Id, key: 'ID');
+      emit(LoginState.success(loginResponse));
     }, failure: (error) {
       emit(LoginState.error(error: error.apiErrorModel.message ?? ''));
     });

@@ -6,6 +6,7 @@ import 'package:homehand/core/theming/styels.dart';
 import 'package:homehand/featuers/Auth/featuers/login/UI/widget/button_login_app.dart';
 import 'package:homehand/featuers/Auth/featuers/login/UI/widget/curve_appbar.dart';
 import 'package:homehand/featuers/Auth/featuers/login/UI/widget/email_password_login_app.dart';
+import 'package:homehand/featuers/Auth/featuers/login/UI/widget/login_bloc_listener.dart';
 import 'package:homehand/featuers/Auth/featuers/login/UI/widget/login_with_face_id.dart';
 import 'package:homehand/featuers/Auth/featuers/login/UI/widget/or_divider.dart';
 import 'package:homehand/featuers/Auth/featuers/login/UI/widget/text_have_accoun.dart';
@@ -41,6 +42,7 @@ class LoginBoody extends StatelessWidget {
                 verticalSpace(20),
                 const TextHaveAccount(),
                 verticalSpace(30),
+             const   LoginBlocListener()
               ],
             ),
           )

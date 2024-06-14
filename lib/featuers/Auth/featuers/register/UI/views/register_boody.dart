@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:homehand/core/animation/animation_todo.dart';
-import 'package:homehand/core/theming/colors.dart';
-import 'package:homehand/core/widget/curve_onboarding.dart';
-import 'package:homehand/featuers/Auth/featuers/register/UI/widget/Shape_register.dart';
-import 'package:homehand/featuers/Auth/featuers/register/UI/widget/circleavtar_shape.dart';
-import 'package:homehand/featuers/Auth/featuers/register/UI/widget/star_image.dart';
+import '../../../../../../core/animation/animation_todo.dart';
+import '../../../../../../core/theming/colors.dart';
+import '../../../../../../core/widget/curve_onboarding.dart';
+import '../widget/Shape_register.dart';
+import '../widget/circleavtar_shape.dart';
+import '../widget/register_bloc_listener.dart';
+import '../widget/star_image.dart';
 
 class RegisterBoody extends StatelessWidget {
   const RegisterBoody({super.key});
@@ -49,8 +50,9 @@ class RegisterBoody extends StatelessWidget {
                     backgroundColor: ColorsManager.mainBlue,
                   ),
                 ),
-              )
-            ],
+              ),
+              RegisterBlocListener()
+           , ],
           )
         ],
       ),

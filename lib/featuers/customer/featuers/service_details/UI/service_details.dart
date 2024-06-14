@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:homehand/core/di/dependace_injection.dart';
 import 'package:homehand/core/helper/extinstion.dart';
+import 'package:homehand/featuers/customer/featuers/service_details/logic/order_cubit.dart';
 
 import 'view/serviceDetails_body.dart';
 
-class ServiceDetails extends StatefulWidget {
-  const ServiceDetails({Key? key}) : super(key: key);
-
-  @override
-  State<ServiceDetails> createState() => _ServiceDetailsState();
-}
-
-class _ServiceDetailsState extends State<ServiceDetails> {
+class ServiceDetails extends StatelessWidget {
+  const ServiceDetails({Key? key, required this.id}) : super(key: key);
+  final String id;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -28,8 +26,10 @@ class _ServiceDetailsState extends State<ServiceDetails> {
           ),
           centerTitle: true,
         ),
-        body: const ServiceDetailsBody(),
-      ),
+        body: BlocProvider(
+    create: (context) => getIt<OrderCubit>(),
+    child: ServiceDetailsBody(id: id,),
+      ),),
     );
   }
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:homehand/core/helper/spacing.dart';
-import 'package:homehand/core/theming/colors.dart';
-import 'package:homehand/featuers/customer/featuers/review_screen/UI/widgets/stars_item.dart';
+import '../../../../../../core/helper/spacing.dart';
+import '../../../../../../core/theming/colors.dart';
+import '../widgets/stars_item.dart';
 
 
 

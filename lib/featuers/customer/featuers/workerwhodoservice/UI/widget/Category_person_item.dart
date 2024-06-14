@@ -1,22 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:homehand/core/helper/spacing.dart';
-import 'package:homehand/core/theming/colors.dart';
-import 'package:homehand/featuers/customer/featuers/workerwhodoservice/data/model/Info_about_who_work_service_model.dart';
+import '../../../../../../core/helper/spacing.dart';
+import '../../../../../../core/theming/colors.dart';
+import '../../data/model/Info_about_who_work_service_model.dart';
 
 class ItemContent extends StatelessWidget {
-  final InfoWoekerService infoService;
-  void Function()? onTap;
-  ItemContent({Key? key, required this.infoService, this.onTap})
+  ItemContent(
+      {Key? key,
+      this.onTap,
+      this.rate,
+      this.serviceName,
+      this.workerName,
+      required this.image})
       : super(key: key);
+  final String image;
+  final String? rate;
+  final String? serviceName;
+  final String? workerName;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
       child: Container(
-        height: 110.h,
-        width: 110.w,
+        width: 210.w,
+        height: 400.h,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: Colors.grey[300], // Changed to Colors.grey[300]
@@ -42,8 +51,8 @@ class ItemContent extends StatelessWidget {
                   width: 100.w,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      fit: BoxFit.cover, // Changed to BoxFit.cover
-                      image: NetworkImage(infoService.imageUrl),
+                      fit: BoxFit.fill, // Changed to BoxFit.cover
+                      image: NetworkImage(image),
                     ),
                     borderRadius: BorderRadius.circular(10),
                   ),
@@ -65,10 +74,10 @@ class ItemContent extends StatelessWidget {
                     const Icon(
                       Icons.star_border_rounded,
                       color: Colors.orange,
-                      size: 12,
+                      size: 16,
                     ),
                     Text(
-                      infoService.rate!,
+                      rate!,
                       style: TextStyle(
                         fontSize: 8.sp,
                         fontWeight: FontWeight.bold,
@@ -102,16 +111,16 @@ class ItemContent extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            infoService.salary!,
-                            style: const TextStyle(
+                          const Text(
+                            '500\$',
+                            style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w500,
                               color: Colors.redAccent,
                             ),
                           ),
                           Text(
-                            'off ${infoService.ofer}',
+                            'off 0 %',
                             style: TextStyle(
                               fontSize: 12.sp,
                               fontWeight: FontWeight.w500,
@@ -124,7 +133,7 @@ class ItemContent extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(5.0).w,
                       child: Text(
-                        infoService.serviceName!,
+                        serviceName!,
                         style: TextStyle(
                           fontSize: 15.sp,
                           fontWeight: FontWeight.bold,
@@ -135,7 +144,7 @@ class ItemContent extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(5.0).w,
                       child: Text(
-                        'by ${infoService.workerName}',
+                        'by ${workerName!}',
                         style: TextStyle(
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w500,

@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:homehand/core/helper/extinstion.dart';
-import 'package:homehand/core/routes/Routes_App.dart';
-import 'package:homehand/core/theming/colors.dart';
-import 'package:homehand/core/theming/styels.dart';
-import 'package:homehand/featuers/Auth/featuers/login/data/model/login_repo_boody.dart';
-import 'package:homehand/featuers/Auth/featuers/login/data/model/login_request_boody.dart';
-import 'package:homehand/featuers/Auth/featuers/login/data/repos/login_repo.dart';
-import 'package:homehand/featuers/Auth/featuers/login/logic/cubit/login_cubit.dart';
-import 'package:homehand/featuers/Auth/featuers/login/logic/cubit/login_state.dart';
+import '../../../../../../core/helper/extinstion.dart';
+import '../../../../../../core/routes/Routes_App.dart';
+import '../../../../../../core/theming/colors.dart';
+import '../../../../../../core/theming/styels.dart';
+import '../../../../../../core/widget/custom_error.dart';
+import '../../data/model/login_repo_boody.dart';
+import '../../data/model/login_request_boody.dart';
+import '../../data/repos/login_repo.dart';
+import '../../logic/cubit/login_cubit.dart';
+import '../../logic/cubit/login_state.dart';
 
 class LoginBlocListener extends StatelessWidget {
   const LoginBlocListener({super.key});
@@ -33,10 +34,12 @@ class LoginBlocListener extends StatelessWidget {
           success: (loginResponse) {
             debugPrint("Success");
             context.pop();
-            if (loginResponse == 'Worker') {
-              context.pushReplacementNamed(RoutesApp.homeWorker);
+            print(loginResponse.userType);
+            if (loginResponse.userType == 'worker') {
+              context.pushReplacementNamed(RoutesApp.homeWorker,
+                  arguments: loginResponse);
             } else {
-              context.pushReplacementNamed(RoutesApp.homeCustomer);
+              context.pushReplacementNamed(RoutesApp.homeCustomer, arguments:loginResponse );
             }
           },
           error: (error) {
@@ -46,35 +49,6 @@ class LoginBlocListener extends StatelessWidget {
         );
       },
       child: const SizedBox.shrink(),
-    );
-  }
-
-  void setupErrorState(BuildContext context, String error) {
-    context.pop();
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        icon: const Icon(
-          Icons.error,
-          color: Colors.red,
-          size: 32,
-        ),
-        content: Text(
-          error,
-          style: TextStyles.font15DarkBlueMedium,
-        ),
-        actions: [
-          TextButton(
-            onPressed: () {
-              context.pop();
-            },
-            child: Text(
-              'Got it',
-              style: TextStyles.font14BlueSemiBold,
-            ),
-          ),
-        ],
-      ),
     );
   }
 }

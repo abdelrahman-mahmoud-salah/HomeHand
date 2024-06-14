@@ -1,19 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:homehand/featuers/woeker/workerProfile_worker_screen/data/model/get_all_orders_to_workers.dart';
 import 'package:homehand/core/helper/extinstion.dart';
 import 'package:homehand/core/theming/colors.dart';
 
 
-import 'view/orderDetails_body.dart';
+import 'package:homehand/featuers/customer/featuers/order_details/UI/view/orderDetails_body.dart';
 
-class OrderDetails extends StatefulWidget {
-  const OrderDetails({Key? key}) : super(key: key);
-
-  @override
-  State<OrderDetails> createState() => _OrderDetailsState();
-}
-
-class _OrderDetailsState extends State<OrderDetails> {
+class OrderDetails extends StatelessWidget {
+  const OrderDetails({Key? key, required this.order}) : super(key: key);
+  final Order order;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +32,7 @@ class _OrderDetailsState extends State<OrderDetails> {
         backgroundColor: Colors.white,
         centerTitle: true,
       ),
-      body: const OrderDetailsBody(),
+      body:  OrderDetailsBody(order: order,),
     );
   }
 }

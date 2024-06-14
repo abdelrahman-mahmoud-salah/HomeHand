@@ -1,19 +1,16 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:homehand/core/helper/extinstion.dart';
-import 'package:homehand/core/routes/Routes_App.dart';
-import 'package:homehand/core/theming/colors.dart';
-import 'package:homehand/featuers/customer/featuers/home/UI/homepage_screen.dart';
-import 'package:homehand/featuers/customer/featuers/orders_screen/UI/orders_screen.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:homehand/featuers/Auth/featuers/login/data/model/login_repo_boody.dart';
+import '../../../../../../core/helper/extinstion.dart';
+import '../../../../../../core/routes/Routes_App.dart';
+import '../../../../../../core/theming/colors.dart';
+import '../homepage_screen.dart';
+import '../../../orders_screen/UI/orders_screen.dart';
 
-class CurveBar extends StatefulWidget {
-  const CurveBar({super.key});
-
-  @override
-  State<CurveBar> createState() => _CurveBarState();
-}
-
-class _CurveBarState extends State<CurveBar> {
+class CurveBar extends StatelessWidget {
+  CurveBar({super.key, required this.data});
+  final LoginResponse data;
   int index = 1;
 
   @override
@@ -23,7 +20,7 @@ class _CurveBarState extends State<CurveBar> {
       IconButton(
         icon: const Icon(Icons.settings, size: 30),
         onPressed: () {
-          context.pushNamed(RoutesApp.settingsScreen);
+          context.pushNamed(RoutesApp.settingsScreen,arguments: data);
         },
       ),
       IconButton(
@@ -52,7 +49,7 @@ class _CurveBarState extends State<CurveBar> {
         backgroundColor: Colors.transparent.withOpacity(0),
         items: items,
         index: index,
-        onTap: (index) => setState(() => this.index = index),
+        //onTap: (index) => setState(() => this.index = index),
       ),
     );
   }

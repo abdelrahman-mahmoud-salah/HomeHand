@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:homehand/core/helper/extinstion.dart';
-import 'package:homehand/core/helper/spacing.dart';
-import 'package:homehand/core/routes/Routes_App.dart';
-import 'package:homehand/featuers/customer/featuers/settings_screen/UI/widgets/custom_list_tile.dart';
-import 'package:homehand/featuers/customer/featuers/settings_screen/UI/widgets/logout_dialog.dart';
+import '../../../../../../core/helper/extinstion.dart';
+import '../../../../../../core/helper/spacing.dart';
+import '../../../../../../core/routes/Routes_App.dart';
+import 'custom_list_tile.dart';
+import 'logout_dialog.dart';
 
 
 

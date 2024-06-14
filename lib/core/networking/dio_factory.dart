@@ -1,20 +1,28 @@
+// ignore_for_file: lines_longer_than_80_chars
+
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
+import 'package:homehand/core/helper/shared_perefernce.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 class DioFactory {
-  /// private constructor as I don't want to allow creating an instance of this class
   DioFactory._();
 
   static Dio? dio;
 
   static Dio getDio() {
-    Duration timeOut = const Duration(minutes: 1);
+    const timeOut = Duration(seconds: 30);
 
     if (dio == null) {
       dio = Dio();
       dio!
         ..options.connectTimeout = timeOut
         ..options.receiveTimeout = timeOut;
+
+      debugPrint(
+        "[USER Token] ====> ${CacheHelper().getString('token') ?? 'NULL TOKEN'}",
+      );
+
       addDioInterceptor();
       return dio!;
     } else {
@@ -25,9 +33,23 @@ class DioFactory {
   static void addDioInterceptor() {
     dio?.interceptors.add(
       PrettyDioLogger(
-        requestBody: true,
-        requestHeader: true,
-        responseHeader: true,
+        request: false,
+        compact: false,
+      ),
+    );
+    dio?.interceptors.add(
+      InterceptorsWrapper(
+        onRequest: (options, handler) {
+          options.headers['Authorization'] =
+              'Bearer ${CacheHelper().getString('token')}';
+
+          return handler.next(options);
+        },
+        // onError: (error, handler) async {
+        //   if (error.response?.statusCode == 401) {
+        //     await AppLogout().logout();
+        //   }
+        // },
       ),
     );
   }

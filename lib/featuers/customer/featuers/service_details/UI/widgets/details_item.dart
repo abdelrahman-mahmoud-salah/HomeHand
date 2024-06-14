@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:homehand/core/theming/colors.dart';
 
 class CustomColumn extends StatelessWidget {
   final String text;
   final double textFieldHeight;
+  final TextEditingController controller;
 
   const CustomColumn({
     Key? key,
     required this.text,
     required this.textFieldHeight,
+    required this.controller,
   }) : super(key: key);
 
   @override
@@ -17,28 +21,34 @@ class CustomColumn extends StatelessWidget {
       children: [
         Text(
           text,
-          style: const TextStyle(
+          style: TextStyle(
             fontWeight: FontWeight.bold,
-            color: Colors.blue,
-            fontSize: 16,
+            color: ColorsManager.mainBlue,
+            fontSize: 16.sp,
           ),
         ),
-        const SizedBox(height: 10),
+        SizedBox(height: 10.h),
         Container(
           height: textFieldHeight,
-          width: 335, // Set width to fill the available space
-          padding: const EdgeInsets.symmetric(horizontal: 10), // Add padding for better appearance
+          width: 335.w, // Set width to fill the available space
+          padding: EdgeInsets.symmetric(horizontal: 10.w), // Add padding for better appearance
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(5),
             border: Border.all(color: Colors.grey), // Use Border.all for border color
           ),
-          child: const TextField(
-            decoration: InputDecoration(
+          child: TextFormField(
+            controller: controller,
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter a $text';
+              }
+            },
+            decoration: const InputDecoration(
               border: InputBorder.none, // Remove border from TextField
             ),
           ),
         ),
-        const SizedBox(height:20,)
+        SizedBox(height: 20.h),
       ],
     );
   }

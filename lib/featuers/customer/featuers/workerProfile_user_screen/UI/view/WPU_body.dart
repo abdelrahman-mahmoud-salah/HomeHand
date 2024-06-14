@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:homehand/core/helper/spacing.dart';
-import 'package:homehand/featuers/customer/featuers/workerProfile_user_screen/UI/widgets/book_button.dart';
-import 'package:homehand/featuers/customer/featuers/workerProfile_user_screen/UI/widgets/description_for_worker.dart';
-import 'package:homehand/featuers/customer/featuers/workerProfile_user_screen/UI/widgets/id_woker_info.dart';
-import 'package:homehand/featuers/customer/featuers/workerProfile_user_screen/UI/widgets/state_item.dart';
+import '../../../../../../core/helper/spacing.dart';
+import '../widgets/book_button.dart';
+import '../widgets/description_for_worker.dart';
+import '../widgets/id_woker_info.dart';
+import '../widgets/state_item.dart';
+import '../../../workerwhodoservice/data/model/Info_about_who_work_service_model.dart';
 
 class WPUBody extends StatelessWidget {
-  
-
-
-  const WPUBody({super.key});
-
+  const WPUBody({super.key, required this.data});
+ final GetAllWorkerinfoModel data;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -28,7 +26,8 @@ class WPUBody extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     TextButton(
-                      child: StateItem(value: '100+', label: 'Review'),
+                      child: StateItem(
+                          value: '${data.reviews_numbers}+', label: 'Review'),
                       onPressed: () {
                         // context.pushNamed(Routes.reviewScreen);
                       },
@@ -38,7 +37,9 @@ class WPUBody extends StatelessWidget {
                   ],
                 ),
                 verticalSpace(15),
-                DescriptonForWorker(),
+                DescriptonForWorker(
+                  description: data.description!,
+                ),
               ],
             ),
           ),
@@ -46,14 +47,16 @@ class WPUBody extends StatelessWidget {
         Positioned(
           top: 100.h,
           left: 150.w,
-          child:const IdWorkerInfo(),
+          child: IdWorkerInfo(
+           data: data,
+          ),
         ),
         //book_button
-        const Positioned(
+         Positioned(
           bottom: 25,
           left: 0,
           right: 0,
-          child: BookBuutton(),
+          child: BookBuutton(id: data.id??'',),
         ),
       ],
     );

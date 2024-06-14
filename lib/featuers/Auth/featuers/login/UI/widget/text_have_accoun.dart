@@ -1,9 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:homehand/core/animation/animation_todo.dart';
-import 'package:homehand/core/routes/Routes_App.dart';
+import '../../../../../../core/animation/animation_todo.dart';
+import '../../../../../../core/routes/Routes_App.dart';
 
-import 'package:homehand/core/theming/styels.dart';
+import '../../../../../../core/theming/styels.dart';
 
 class TextHaveAccount extends StatelessWidget {
   const TextHaveAccount({

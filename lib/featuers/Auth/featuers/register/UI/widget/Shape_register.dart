@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:homehand/core/animation/animation_todo.dart';
-import 'package:homehand/featuers/Auth/featuers/register/UI/widget/app_form_register.dart';
+import '../../../../../../core/animation/animation_todo.dart';
+import 'app_form_register.dart';
 
 class ShapeRegister extends StatelessWidget {
   const ShapeRegister({

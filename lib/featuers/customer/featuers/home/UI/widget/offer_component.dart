@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:homehand/core/helper/spacing.dart';
-import 'package:homehand/core/theming/colors.dart';
+import '../../../../../../core/helper/spacing.dart';
+import '../../../../../../core/theming/colors.dart';
 
 class OfferComponent extends StatelessWidget {
   const OfferComponent({required this.offerData, super.key});
@@ -40,7 +40,7 @@ class OfferComponent extends StatelessWidget {
                   offerData.title,
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 20.sp, // Reduced font size
+                    fontSize: 15.sp, // Reduced font size
                     fontWeight: FontWeight.bold,
                   ),
                 ), // Added spacing
@@ -58,9 +58,9 @@ class OfferComponent extends StatelessWidget {
           ),
           SizedBox(
             width: MediaQuery.of(context).size.width *
-                0.30, // Adjusted image width
+                0.25, // Adjusted image width
             height: MediaQuery.of(context).size.width *
-                0.30, // Adjusted image height
+                0.25, // Adjusted image height
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10.w),
               child: Image.network(

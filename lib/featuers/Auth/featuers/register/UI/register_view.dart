@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:homehand/featuers/Auth/featuers/register/UI/views/register_boody.dart';
+import 'views/register_boody.dart';
 
 class RegisterView extends StatelessWidget {
   const RegisterView({super.key});

@@ -4,10 +4,11 @@ import 'package:homehand/core/helper/spacing.dart';
 import 'package:homehand/core/theming/colors.dart';
 import 'package:homehand/core/theming/styels.dart';
 import 'package:homehand/featuers/customer/featuers/orders_screen/UI/widgets/order_buttons.dart';
+import 'package:homehand/featuers/woeker/workerProfile_worker_screen/data/model/get_all_orders_to_workers.dart';
 
 class OrderItem extends StatelessWidget {
-  OrderItem({Key? key}) : super(key: key);
-
+  OrderItem({Key? key, required this.Orders}) : super(key: key);
+  final Order Orders;
   static String coin = "LE";
 
   @override
@@ -32,13 +33,13 @@ class OrderItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Row(
+           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Icon(Icons.star, color: Colors.yellow, size: 18),
+              const Icon(Icons.star, color: Colors.yellow, size: 18),
               Text(
-                "4.4",
-                style: TextStyle(
+                 '${Orders.rating}',
+                style: const TextStyle(
                     fontWeight: FontWeight.bold, color: Color(0xff053B62)),
               ),
             ],
@@ -77,7 +78,7 @@ class OrderItem extends StatelessWidget {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(80),
                         child: Image.network(
-                          'https://cdn-icons-png.flaticon.com/512/147/147129.png',
+                          '${Orders.workerId!.profileImage}',
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -91,11 +92,11 @@ class OrderItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Sarah jones',
+                      '${Orders.workerId!.worker!.firstName} ${Orders.workerId!.worker!.secondName}',
                       style: TextStyles.font14BlueSemiBold,
                     ),
                     Text(
-                      'Sarahjones44@gmail.com',
+                      '${Orders.workerId!.worker!.email}',
                       style: TextStyle(
                           color: Colors.black87,
                           fontSize: 12.sp,
@@ -114,7 +115,7 @@ class OrderItem extends StatelessWidget {
           verticalSpace(10),
           Row(
             children: [
-              Text('Sarah jones', style: TextStyles.font14BlueSemiBold),
+              Text('Order Details', style: TextStyles.font14BlueSemiBold),
               const Spacer(),
               Text('Price details', style: TextStyles.font14BlueSemiBold),
             ],
@@ -124,11 +125,11 @@ class OrderItem extends StatelessWidget {
           ),
           Row(
             children: [
-              const Icon(Icons.date_range,
+              const Icon(Icons.place,
                   color: ColorsManager.darkBlue, size: 20),
               horizentalSpace(7),
               Text(
-                'Friday, june 25h',
+                '${Orders.address}',
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.grey[500],
@@ -136,7 +137,7 @@ class OrderItem extends StatelessWidget {
               ),
               const Spacer(),
               Text(
-                '$coin 60 * (2 Hours)',
+                '${Orders.paymentMethod}',
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.grey[500],
@@ -144,14 +145,13 @@ class OrderItem extends StatelessWidget {
               ),
             ],
           ),
-          verticalSpace(8),
           Row(
             children: [
-              const Icon(Icons.access_time,
+              const Icon(Icons.date_range,
                   color: ColorsManager.darkBlue, size: 20),
               horizentalSpace(7),
               Text(
-                '02:30 PM',
+                '${Orders.feedBack}',
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.grey[500],
@@ -159,16 +159,16 @@ class OrderItem extends StatelessWidget {
               ),
               const Spacer(),
               Text(
-                '$coin 120',
+                '${Orders.orderPrice} $coin',
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: Colors.red,
+                    color: Colors.grey[500],
                     fontSize: 15.sp),
               ),
             ],
           ),
           verticalSpace(25),
-          const OrderButtons(),
+          OrderButtons(isPending:Orders.orderStatus,order: Orders,),
         ],
       ),
     );

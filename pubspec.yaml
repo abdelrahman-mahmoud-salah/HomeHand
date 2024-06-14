@@ -52,7 +52,10 @@ dependencies:
   retrofit: ^4.1.0
   retrofit_generator: ^8.1.0
   speech_to_text: ^6.6.1
-
+  shimmer:
+  image_picker:
+  permission_handler:
+  device_info_plus:
 dev_dependencies:
   flutter_lints: ^3.0.0
   flutter_test:

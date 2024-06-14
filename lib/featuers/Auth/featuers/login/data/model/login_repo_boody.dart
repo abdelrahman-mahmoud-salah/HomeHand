@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+
 part 'login_repo_boody.g.dart';
 
 @JsonSerializable()
@@ -15,17 +16,17 @@ class LoginResponse {
     required this.userType,
     required this.profile,
   });
-  String status;
-  String message;
-  String token;
+  String? status;
+  String? message;
+  String? token;
   @JsonKey(name: '_id')
-  String id;
-  String firstName;
-  String secondName;
-  List<String> address;
-  String gender;
-  String userType;
-  String profile;
+  String? id;
+  String? firstName;
+  String? secondName;
+  List<String>? address;
+  String? gender;
+  String? userType;
+  String? profile ;
 
   factory LoginResponse.fromJson(Map<String, dynamic> json) =>
       _$LoginResponseFromJson(json);

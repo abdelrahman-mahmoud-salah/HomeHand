@@ -1,15 +1,19 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:homehand/core/helper/spacing.dart';
-import 'package:homehand/core/theming/colors.dart';
-import 'package:homehand/core/theming/styels.dart';
-import 'package:homehand/core/widget/button_app.dart';
-import 'package:homehand/core/widget/drop_down_icon.dart';
+
+import '../../../../../../core/helper/image_picker.dart';
+import '../../../../../../core/helper/spacing.dart';
+import '../../../../../../core/theming/colors.dart';
+import '../../../../../../core/theming/styels.dart';
+import '../../../../../../core/widget/button_app.dart';
+import '../../../../../../core/widget/drop_down_icon.dart';
+import '../../logic/cubit/register_cubit.dart';
 
 class AdditionalinformationForWorker extends StatefulWidget {
-  AdditionalinformationForWorker({super.key, required this.Customer});
-
-  final String Customer;
+  AdditionalinformationForWorker({super.key});
 
   @override
   State<AdditionalinformationForWorker> createState() =>
@@ -22,7 +26,8 @@ class _AdditionalinformationForWorkerState
 
   @override
   Widget build(BuildContext context) {
-    if (widget.Customer == 'user') {
+    final cubit = context.read<RegisterCubit>();
+    if (cubit.userRole == 'client') {
       return verticalSpace(20);
     } else {
       return Column(
@@ -56,10 +61,16 @@ class _AdditionalinformationForWorkerState
               ),
               dropdownColor: ColorsManager.white,
               value: selectedValue,
-              onChanged: (String? newValue) {},
+              onChanged: (String? newValue) {
+                cubit.specialization = newValue!;
+              },
               items: dropdownItems),
           verticalSpace(30),
           ButtonApp(
+            onPressed: () async {
+              final Image = await PickImage.galleryPick();
+              cubit.idImage = File(Image!.path);
+            },
             widthpading: 10.sp,
             color: Colors.white,
             icon: 'assets/images/share-2.png',

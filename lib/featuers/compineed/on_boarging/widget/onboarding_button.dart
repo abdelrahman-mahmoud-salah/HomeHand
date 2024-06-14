@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:homehand/core/helper/extinstion.dart';
-import 'package:homehand/core/routes/Routes_App.dart';
+import '../../../../core/helper/extinstion.dart';
+import '../../../../core/routes/Routes_App.dart';
 
-import 'package:homehand/core/theming/colors.dart';
-import 'package:homehand/core/theming/styels.dart';
+import '../../../../core/theming/colors.dart';
+import '../../../../core/theming/styels.dart';
 
 class OnBoardingButton extends StatelessWidget {
   const OnBoardingButton({super.key, this.pagecontroller});

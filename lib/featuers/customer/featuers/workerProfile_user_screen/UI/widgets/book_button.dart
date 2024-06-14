@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:homehand/core/helper/extinstion.dart';
-import 'package:homehand/core/routes/Routes_App.dart';
+import '../../../../../../core/helper/extinstion.dart';
+import '../../../../../../core/routes/Routes_App.dart';
 
 class BookBuutton extends StatelessWidget {
   const BookBuutton({
-    super.key,
+    super.key, required this.id,
   });
-
+final String id;
   @override
   Widget build(BuildContext context) {
     return Center(
       child: ElevatedButton(
         onPressed: () {
-          context.pushNamed(RoutesApp.serviceDetails);
+          context.pushNamed(RoutesApp.serviceDetails ,arguments: id);
         },
         style: ElevatedButton.styleFrom(
           fixedSize: Size(340.w, 75.h),

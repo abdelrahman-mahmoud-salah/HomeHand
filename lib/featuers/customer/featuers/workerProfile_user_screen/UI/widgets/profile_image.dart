@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfileImage extends StatelessWidget {
-  const ProfileImage({super.key});
-
+  const ProfileImage({super.key, this.image});
+  final String? image;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -38,7 +38,7 @@ class ProfileImage extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(80),
               child: Image.network(
-                'https://cdn-icons-png.flaticon.com/512/147/147129.png',
+                image!,
                 fit: BoxFit.cover,
               ),
             ),

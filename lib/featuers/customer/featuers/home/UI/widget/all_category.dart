@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:homehand/core/helper/extinstion.dart';
-import 'package:homehand/core/routes/Routes_App.dart';
-import 'package:homehand/core/theming/colors.dart';
-import 'package:homehand/featuers/customer/featuers/home/UI/widget/category_item.dart';
+
+import '../../../../../../core/helper/extinstion.dart';
+import '../../../../../../core/helper/shared_perefernce.dart';
+import '../../../../../../core/routes/Routes_App.dart';
+import '../../../../../../core/theming/colors.dart';
+import 'category_item.dart';
 
 class AllCategory extends StatelessWidget {
   const AllCategory({super.key});
@@ -39,7 +41,8 @@ class AllCategory extends StatelessWidget {
         color = Color.fromARGB(255, 176, 220, 251);
         iconColor = Colors.white;
         onTap = () {
-          contex.pushNamed(RoutesApp.workersWhoDoService);
+          contex.pushNamed(RoutesApp.workersWhoDoService );
+          CacheHelper().setInstance(data:label , key: 'Specialization');
         };
         ;
       case 1:
@@ -47,30 +50,52 @@ class AllCategory extends StatelessWidget {
         label = 'Repair';
         color = ColorsManager.lighterGray;
         iconColor = Color.fromARGB(255, 65, 162, 232);
+        onTap = () {
+          contex.pushNamed(RoutesApp.workersWhoDoService );
+          contex.pushNamed(RoutesApp.workersWhoDoService );
+          CacheHelper().setInstance(data:label , key: 'Specialization');
+        };
+        ;
       case 2:
         iconData = Icons.plumbing;
         label = 'Plumbing';
         color = Color.fromARGB(255, 176, 220, 251);
         iconColor = Colors.white;
-        ;
+         onTap = () {
+          contex.pushNamed(RoutesApp.workersWhoDoService );
+          CacheHelper().setInstance(data:label , key: 'Specialization');
+        };
+        
       case 3:
         iconData = Icons.format_paint_rounded;
         label = 'Painting';
         color = ColorsManager.lighterGray;
         iconColor = Color.fromARGB(255, 65, 162, 232);
-        ;
+         onTap = () {
+      contex.pushNamed(RoutesApp.workersWhoDoService );
+          CacheHelper().setInstance(data:label , key: 'Specialization');
+        };
+        
       case 4:
         iconData = Icons.local_laundry_service_rounded;
         label = 'Washing';
         color = Color.fromARGB(255, 176, 220, 251);
         iconColor = Colors.white;
-
+ onTap = () {
+         contex.pushNamed(RoutesApp.workersWhoDoService );
+          CacheHelper().setInstance(data:label , key: 'Specialization');
+        };
+        
       case 5:
         iconData = Icons.pest_control_rounded;
         label = 'Sterilization';
         color = ColorsManager.lighterGray;
         iconColor = Color.fromARGB(255, 65, 162, 232);
-        ;
+         onTap = () {
+contex.pushNamed(RoutesApp.workersWhoDoService );
+          CacheHelper().setInstance(data:label , key: 'Specialization');
+        };
+        
       default:
         throw Exception('Invalid index: $index');
     }

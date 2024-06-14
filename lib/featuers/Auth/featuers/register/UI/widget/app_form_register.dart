@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:homehand/core/animation/animation_todo.dart';
-import 'package:homehand/core/helper/spacing.dart';
-import 'package:homehand/core/theming/styels.dart';
-import 'package:homehand/core/widget/button_app.dart';
-import 'package:homehand/featuers/Auth/featuers/register/UI/widget/information_customer_register.dart';
+import '../../../../../../core/animation/animation_todo.dart';
+import '../../../../../../core/helper/spacing.dart';
+import '../../../../../../core/theming/styels.dart';
+import '../../../../../../core/widget/button_app.dart';
+import 'information_customer_register.dart';
 
 class AppFormRegister extends StatelessWidget {
   const AppFormRegister({

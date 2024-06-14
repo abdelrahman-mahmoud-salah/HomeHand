@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:homehand/core/helper/spacing.dart';
-import 'package:homehand/core/theming/colors.dart';
-import 'package:homehand/core/theming/styels.dart';
-import 'package:homehand/featuers/customer/featuers/home/UI/widget/Advertisment.dart';
-import 'package:homehand/featuers/customer/featuers/home/UI/widget/addvertisment_pageview.dart';
-import 'package:homehand/featuers/customer/featuers/home/UI/widget/all_category.dart';
-import 'package:homehand/featuers/customer/featuers/home/UI/widget/search_homepage.dart';
+
+import '../../../../../../core/helper/shared_perefernce.dart';
+import '../../../../../../core/helper/spacing.dart';
+import '../../../../../../core/theming/colors.dart';
+import '../../../../../../core/theming/styels.dart';
+import '../widget/Advertisment.dart';
+import '../widget/all_category.dart';
+import '../widget/search_homepage.dart';
 
 class HomeBody extends StatelessWidget {
+  
   const HomeBody({super.key});
 
   @override
   Widget build(BuildContext context) {
+    print(CacheHelper().getString('token'));
     return SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.symmetric(

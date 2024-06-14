@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:homehand/core/helper/spacing.dart';
-import 'package:homehand/core/theming/colors.dart';
-import 'package:homehand/featuers/customer/featuers/settings_screen/UI/widgets/settings_list.dart';
+import 'package:homehand/featuers/Auth/featuers/login/data/model/login_repo_boody.dart';
+import '../../../../../../core/helper/spacing.dart';
+import '../../../../../../core/theming/colors.dart';
+import '../widgets/settings_list.dart';
 
 
 
 class SettingsBody extends StatelessWidget {
-  const SettingsBody({super.key});
-
+  const SettingsBody({super.key, required this.data});
+  final LoginResponse data;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -41,7 +42,6 @@ class SettingsBody extends StatelessWidget {
             left: 0,
             right: 0,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Stack(
                   children: [
@@ -75,7 +75,7 @@ class SettingsBody extends StatelessWidget {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(80),
                           child: Image.network(
-                            'https://cdn-icons-png.flaticon.com/512/147/147129.png',
+                            '${data.profile}',
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -106,17 +106,17 @@ class SettingsBody extends StatelessWidget {
                 ),
                 verticalSpace(15),
                 Text(
-                  'Omar Ahmed',
+                  '${data.firstName!.toUpperCase()} ${data.secondName!.toUpperCase()}',
                   style:
-                      TextStyle(fontWeight: FontWeight.w600, fontSize: 20.sp),
+                      TextStyle(fontWeight: FontWeight.w600, fontSize: 20.sp,color:ColorsManager.mainBlue),
                 ),
                 verticalSpace(10),
                 Text(
-                  'omarahmed14@gmail.com',
+                  'ID: ${data.id!.substring(20)}',
                   style: TextStyle(
                     color: const Color(0xff242424),
                     fontWeight: FontWeight.w400,
-                    fontSize: 15.sp,
+                    fontSize: 16.sp,
                   ),
                 ),
                 verticalSpace(10),

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:homehand/core/di/dependace_injection.dart';
 import 'package:homehand/core/helper/extinstion.dart';
 import 'package:homehand/core/theming/colors.dart';
 import 'package:homehand/featuers/customer/featuers/orders_screen/UI/view/orders_body.dart';
+import 'package:homehand/featuers/customer/featuers/orders_screen/logic/get_orders_cubit.dart';
 
 
 class OrdersScreen extends StatefulWidget {
@@ -13,12 +16,12 @@ class OrdersScreen extends StatefulWidget {
 }
 
 class _OrdersScreenState extends State<OrdersScreen> {
-  bool isWorker = false;
+
 
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: isWorker ? 2 : 3,
+      length: 3,
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
@@ -43,22 +46,22 @@ class _OrdersScreenState extends State<OrdersScreen> {
             indicatorColor: ColorsManager.darkBlue,
             tabs: [
               Tab(
-                  child: Text("Completed",
+                  child: Text('Pending',
                       style: TextStyle(
                           fontSize: 20.sp, fontWeight: FontWeight.bold))),
               Tab(
-                  child: Text("Pending",
+                  child: Text('Completed',
                       style: TextStyle(
                           fontSize: 20.sp, fontWeight: FontWeight.bold))),
-              if (!isWorker)
-                Tab(
-                    child: Text("Cancelled",
+              Tab(
+                    child: Text('Cancelled',
                         style: TextStyle(
                             fontSize: 20.sp, fontWeight: FontWeight.bold))),
             ],
           ),
         ),
-        body: OrdersBody(),
+        body: BlocProvider(create: (context) => getIt<GetUOrdersCubit>()..emitGetOrdersStates(),
+        child: OrdersBody(),),
       ),
     );
   }
